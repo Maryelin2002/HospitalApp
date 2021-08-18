@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="primary">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="IrALogin()">Log in</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h1>Crea tu<br />cuenta</h1>
+
+    <form id="form" [formGroup]="registerForm" (submit)="crearUsuario()">
+        <ion-item>
+            <ion-input formControlName="nombre" name="nombre" placeholder="Nombre"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-input formControlName="email" name="email" placeholder="Correo"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-input formControlName="password" name="password" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block" shape="round">Registrarme</ion-button>
+    </form>
+
+    <p>By pressing 'Join Us' you agree to <br />our terms & conditions.</p>
+</ion-content>

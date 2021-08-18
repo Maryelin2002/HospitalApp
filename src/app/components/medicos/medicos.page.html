@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Medicos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (keyup)="buscarMedicos(txtTermino.value)" #txtTermino></ion-searchbar>
+
+    <div class="action-button">
+        <ion-button (click)="presentAlertPrompt()">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Agregar medico
+        </ion-button>
+    </div>
+
+    <ion-list>
+        <ion-item *ngFor="let medico of medicos">
+            <!-- <ion-icon class="edit" name="create"></ion-icon> -->
+            <ion-icon class="drop" name="trash" (click)="EliminarMedico(medico)"></ion-icon>
+            <ion-label> {{ medico.nombre }} </ion-label>
+            <img [src]="medico.imagen | imagen: 'Medicos'" alt="">
+        </ion-item>
+    </ion-list>
+</ion-content>

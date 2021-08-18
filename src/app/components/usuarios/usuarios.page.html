@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Usuarios</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (keyup)="buscar(txtTermino.value)" #txtTermino></ion-searchbar>
+
+    <ion-list>
+        <ion-item *ngFor="let usuario of usuarios">
+            <!-- <ion-icon class="edit" name="create" routerLink="/perfil"></ion-icon> -->
+            <ion-icon class="drop" name="trash" (click)="eliminarUsuario(usuario)"></ion-icon>
+            <ion-label> {{ usuario.nombre }} </ion-label>
+            <img [src]="usuario.imagenUrl" alt="">
+        </ion-item>
+    </ion-list>
+</ion-content>

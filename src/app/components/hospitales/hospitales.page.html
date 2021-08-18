@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Hospitales</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (keyup)="BuscarHospital(txtTermino.value)" #txtTermino></ion-searchbar>
+
+    <div class="action-button">
+        <ion-button (click)="presentAlertPrompt()">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Agregar hospital
+        </ion-button>
+    </div>
+
+    <ion-list>
+        <ion-item *ngFor="let hospital of hospital">
+            <ion-icon class="drop" name="trash" (click)="eliminarHospital(hospital)"></ion-icon>
+            <ion-icon class="edit" name="create" (click)="presentAlertPromptEditar(hospital)"></ion-icon>
+            <ion-label> {{ hospital.nombre }} </ion-label>
+            <img [src]="hospital.imagen | imagen: 'Hospitales' " alt="">
+        </ion-item>
+    </ion-list>
+</ion-content>

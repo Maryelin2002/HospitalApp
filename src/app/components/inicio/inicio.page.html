@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title> Hospital app </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-text>
+        <h1>Bienvenido.</h1>
+        <p>La solucion a todos los problemas de personal en su clinica.</p>
+    </ion-text>
+
+    <div class="actions">
+        <div class="login-buttons">
+            <div class="separator">
+                <span class="line left"></span>
+                <span class="line right"></span>
+            </div>
+            <ion-button class="signup-btn" expand="block" (click)="Registrarme()">Registrame</ion-button>
+            <p class="login">Ya tienes una cuenta? <a (click)="Login()">Ingresa ahora</a></p>
+        </div>
+    </div>
+
+</ion-content>

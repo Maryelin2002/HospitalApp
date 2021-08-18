@@ -1,0 +1,23 @@
+ion-item {
+    text-align: left;
+    img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 8px solid #ffffff;
+        text-align: left;
+    }
+}
+
+.edit {
+    color: dodgerblue;
+    width: 23px;
+    height: 23px;
+}
+
+.drop {
+    color: red;
+    margin-right: 12px;
+    width: 23px;
+    height: 23px;
+}
